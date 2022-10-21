@@ -27,7 +27,7 @@ do
         while [[ $attemption -ne 3 ]]
         do
             echo "Введите пароль: " 
-            read -s user_password
+            read -t 10 -s user_password
             echo "$user_password" |md5sum >user_pass
             check=0
             while read ps
