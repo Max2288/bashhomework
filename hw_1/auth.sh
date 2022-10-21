@@ -48,6 +48,11 @@ do
                 echo "Пользователь $user_login ввёл неверный пароль попыток осталось $((3-$attemption))!" >&2
             fi
         done
+        if [[ $attemption -eq 3 ]]
+        then
+            echo "Неуспешная авторизация!"
+            echo "Пользователь $user_login не смог авторизироваться!" >&2
+        fi
         break
     fi
 done
